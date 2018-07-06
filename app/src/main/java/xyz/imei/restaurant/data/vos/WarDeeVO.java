@@ -41,7 +41,7 @@ public class WarDeeVO {
     }
 
     public List<GeneralTasteVO> getGeneralTaste() {
-        return generalTaste;
+        return generalTaste == null ? new ArrayList<GeneralTasteVO>() : generalTaste;
     }
 
     public List<SuitedForVO> getSuitedFor() {

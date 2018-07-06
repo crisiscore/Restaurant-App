@@ -21,4 +21,6 @@
     <string name="dummy_note">Add a note (extra sauce or no onions, etc.)</string>
     <string name="dummy_qty">- 2 +</string>
     <string name="add_to_cart">Add To Cart</string>
+    <string name="empty_text">ဘာစားစရာမှ မရှိသေးလို့စိတ်မကောင်းပါ…</string>
+    <string name="network_error">အင်တာနက်နဲ့ချိတ်ဆက်လို့မရပါ…</string>
 </resources>

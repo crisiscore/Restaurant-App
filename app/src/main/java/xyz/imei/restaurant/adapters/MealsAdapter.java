@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.EventListener;
 import java.util.List;
 
 import xyz.imei.restaurant.R;

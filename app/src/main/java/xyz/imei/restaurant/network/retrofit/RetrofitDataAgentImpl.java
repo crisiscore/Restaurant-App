@@ -16,8 +16,11 @@ import xyz.imei.restaurant.agents.MealsDataAgent;
 import xyz.imei.restaurant.events.ApiErrorEvent;
 import xyz.imei.restaurant.events.GetWarDeeEmptyEvent;
 import xyz.imei.restaurant.events.GetWarDeeSuccessEvent;
+import xyz.imei.restaurant.events.SearchWarDeeSuccessEvent;
 import xyz.imei.restaurant.network.responses.GetWarDeeResponse;
+import xyz.imei.restaurant.network.responses.SearchWarDeeResponse;
 import xyz.imei.restaurant.utils.ASTLConstants;
+import xyz.imei.restaurant.viewpods.EmptyViewPod;
 
 public class RetrofitDataAgentImpl implements MealsDataAgent {
     
@@ -49,7 +52,7 @@ public class RetrofitDataAgentImpl implements MealsDataAgent {
     }
 
     @Override
-    public void loadMeals(String accessToken) {
+    public void loadWarDees(String accessToken) {
         Call<GetWarDeeResponse> call = mApi.getWarDeeList(accessToken);
         call.enqueue(new Callback<GetWarDeeResponse>() {
             @Override
@@ -68,6 +71,29 @@ public class RetrofitDataAgentImpl implements MealsDataAgent {
             public void onFailure(@NonNull Call<GetWarDeeResponse> call, @NonNull Throwable t) {
                 ApiErrorEvent event = new ApiErrorEvent(t.getMessage());
                 EventBus.getDefault().post(event);
+            }
+        });
+    }
+
+    @Override
+    public void searchWarDee(String accessToken, String tasteType, String suited, int minPrice, int maxPrice, boolean isNearBy, String currentTsp, double currentLat, double currentLng) {
+        Call<SearchWarDeeResponse> call = mApi.searchWarDee(accessToken , tasteType , suited , minPrice , maxPrice , isNearBy , currentTsp , currentLat , currentLng);
+        call.enqueue(new Callback<SearchWarDeeResponse>() {
+            @Override
+            public void onResponse(@NonNull Call<SearchWarDeeResponse> call, @NonNull Response<SearchWarDeeResponse> response) {
+                SearchWarDeeResponse searchWarDeeResponse = response.body();
+                if (searchWarDeeResponse != null && searchWarDeeResponse.isResponseOk()){
+                    SearchWarDeeSuccessEvent event = new SearchWarDeeSuccessEvent(searchWarDeeResponse.getWarDeeVOList());
+                    EventBus.getDefault().post(event);
+                }else if (searchWarDeeResponse != null && searchWarDeeResponse.getWarDeeVOList().size() == 0){
+                    GetWarDeeEmptyEvent event = new GetWarDeeEmptyEvent(searchWarDeeResponse.getMessage());
+                    EventBus.getDefault().post(event);
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<SearchWarDeeResponse> call, @NonNull Throwable t) {
+                EventBus.getDefault().post(new ApiErrorEvent(t.getMessage()));
             }
         });
     }

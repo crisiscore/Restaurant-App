@@ -15,6 +15,7 @@ import xyz.imei.restaurant.delegates.MealDelegate;
 public class MealsViewHolder extends BaseViewHolder implements View.OnClickListener {
 
     private MealDelegate mDelegate;
+    private WarDeeVO mWarDee;
 
     @BindView(R.id.iv_meal)ImageView ivMealImage;
     @BindView(R.id.tv_meal_name)TextView tvMealName;
@@ -32,15 +33,17 @@ public class MealsViewHolder extends BaseViewHolder implements View.OnClickListe
     @Override
     public void bind(MealDelegate mealDelegate, WarDeeVO warDeeVO) {
         mDelegate = mealDelegate;
+        mWarDee = warDeeVO;
         Glide.with(ivMealImage.getContext()).load(warDeeVO.getImages().get(0)).into(ivMealImage);
         tvMealName.setText(warDeeVO.getName());
-        tvMealPrice.setText(String.valueOf(warDeeVO.getPriceRangeMin()));
+        tvMealPrice.setText(String.valueOf(warDeeVO.getPriceRangeMin()).concat(" ").concat("ကျပ်"));
+        tvMealCategory.setText(warDeeVO.getGeneralTaste().get(0).getTasteDesc());
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == itemView.getId()) {
-            mDelegate.onClickMeal();
+            mDelegate.onClickMeal(mWarDee.getWarDeeId());
         }
     }
 }

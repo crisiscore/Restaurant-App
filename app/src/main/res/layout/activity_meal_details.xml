@@ -11,7 +11,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -34,14 +35,14 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
-
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -51,34 +52,37 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_medium_2">
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tv_meal_name"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_meal_price"
                 android:layout_marginEnd="@dimen/margin_medium_2"
                 android:layout_toStartOf="@+id/tv_meal_price"
-                android:text="@string/dummy_meal_name"
+                android:gravity="start"
                 android:lineSpacingMultiplier="1.1"
+                android:text="@string/dummy_meal_name"
                 android:textColor="@color/primary_text"
                 android:textSize="@dimen/text_heading_1x"
                 android:textStyle="bold" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tv_meal_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
                 android:background="@drawable/rating_point_bg"
                 android:padding="@dimen/margin_medium_2"
                 android:text="@string/dummy_meal_price"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/text_regular_2x" />
 
-            <TextView
+            <org.mmtextview.components.MMTextView
                 android:id="@+id/tv_meal_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_meal_name"
+                android:layout_below="@+id/tv_meal_price"
                 android:layout_marginTop="@dimen/margin_xlarge"
                 android:lineSpacingMultiplier="1.1"
                 android:text="@string/dummy_description"
@@ -91,9 +95,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_meal_description"
                 android:layout_marginTop="@dimen/margin_xlarge"
-                android:backgroundTint="@color/primary_text"
+                android:backgroundTint="@color/secondary_text"
                 android:hint="@string/dummy_note"
-                android:padding="@dimen/margin_medium_2"
+                android:paddingBottom="@dimen/margin_medium_2"
+                android:paddingEnd="@dimen/margin_medium"
+                android:paddingStart="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium_2"
                 android:textColor="@color/primary_text"
                 android:textColorHint="@color/secondary_text"
                 android:textSize="@dimen/text_regular" />
@@ -106,7 +113,8 @@
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,7 +125,8 @@
                     android:textColor="@android:color/white"
                     android:textSize="@dimen/text_regular_2x" />
 
-                <TextView
+                <Button
+                    style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -134,6 +143,6 @@
 
         </RelativeLayout>
 
-    </ScrollView>
+    </android.support.v4.widget.NestedScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

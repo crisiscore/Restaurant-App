@@ -53,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tv_meal_name"
                     android:layout_marginStart="@dimen/margin_medium"
+                    android:textSize="@dimen/text_regular"
                     android:layout_marginTop="@dimen/margin_medium"
                     android:text="@string/dummy_category"
                     android:textColor="@color/secondary_text" />
@@ -64,8 +65,9 @@
                     android:layout_below="@+id/tv_meal_category"
                     android:layout_marginStart="@dimen/margin_medium"
                     android:layout_marginTop="@dimen/margin_small"
+                    android:textSize="@dimen/text_regular"
                     android:text="@string/dummy_price"
-                    android:textColor="@color/secondary_text" />
+                    android:textColor="@color/primary_text" />
 
                 <android.support.v7.widget.AppCompatRatingBar
                     android:id="@+id/rb_meal_rating"
