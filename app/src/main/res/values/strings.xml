@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Restaurant</string>
+    <string name="dummy_distance">3 km</string>
+    <string name="dummy_name">Casa Pop</string>
+    <string name="action_settings">Account Settings</string>
+    <string name="dummy_category">Cafe,Italian,Chinese</string>
+    <string name="dummy_price">Cost $300 for one</string>
+    <string name="view_details">View details</string>
+    <string name="dummy_rating">4.6</string>
+    <string name="greeting">Good afternoon, Crisis</string>
+    <string name="dummy_subtitle">It\'s time for lunch</string>
+    <string name="search_restaurant">Search Restaurant</string>
+    <string name="chinese">Chinese</string>
+    <string name="tacos">Tacos</string>
+    <string name="Burger">burger</string>
+    <string name="donut">Donut</string>
+    <string name="offers">Offers</string>
+    <string name="dummy_meal_name">White sauce pasta With Vegetable</string>
+    <string name="dummy_meal_price">$269</string>
+    <string name="dummy_description">When you are in need of a tutor, you can simply contact us and tell us about what you want to learn, what type of tutor you need, what location and time you are comfortable to learn.</string>
+    <string name="dummy_note">Add a note (extra sauce or no onions, etc.)</string>
+    <string name="dummy_qty">- 2 +</string>
+    <string name="add_to_cart">Add To Cart</string>
 </resources>

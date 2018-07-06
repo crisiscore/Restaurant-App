@@ -8,4 +8,24 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CategoryStyle">
+        <item name="android:drawablePadding">@dimen/margin_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">@dimen/margin_medium</item>
+        <item name="android:textSize">@dimen/text_regular</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:clickable">true</item>
+        <item name="android:foreground">@drawable/ripple</item>
+    </style>
+
 </resources>

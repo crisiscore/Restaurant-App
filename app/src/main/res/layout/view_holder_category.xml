@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ll_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_noodle_chinese_black_24dp"
+            android:text="@string/chinese" />
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_taco_black"
+            android:text="@string/tacos" />
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_hamburger"
+            android:text="@string/Burger" />
+
+        <TextView
+            style="@style/CategoryStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_donut_black_24dp"
+            android:text="@string/donut" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_category"
+        android:layout_margin="@dimen/margin_large"
+        android:text="@string/offers"
+        android:textAllCaps="true"
+        android:textColor="@color/icons"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold" />
+
+</RelativeLayout>

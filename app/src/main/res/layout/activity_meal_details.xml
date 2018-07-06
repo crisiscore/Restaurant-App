@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.MealDetailsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/back_image_height"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/iv_meal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/dummy_name"
+                android:fitsSystemWindows="true"
+                android:foreground="@drawable/foreground_image_details"
+                android:scaleType="centerCrop"
+                android:src="@drawable/meal"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium_2">
+
+            <TextView
+                android:id="@+id/tv_meal_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_toStartOf="@+id/tv_meal_price"
+                android:text="@string/dummy_meal_name"
+                android:lineSpacingMultiplier="1.1"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/text_heading_1x"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_meal_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/rating_point_bg"
+                android:padding="@dimen/margin_medium_2"
+                android:text="@string/dummy_meal_price"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_regular_2x" />
+
+            <TextView
+                android:id="@+id/tv_meal_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_meal_name"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:lineSpacingMultiplier="1.1"
+                android:text="@string/dummy_description"
+                android:textColor="@color/secondary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/et_meal_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_meal_description"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:backgroundTint="@color/primary_text"
+                android:hint="@string/dummy_note"
+                android:padding="@dimen/margin_medium_2"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/secondary_text"
+                android:textSize="@dimen/text_regular" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_meal_note"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_medium_2"
+                    android:text="@string/dummy_qty"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_regular_2x" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_weight="2"
+                    android:background="@color/colorPrimary"
+                    android:padding="@dimen/margin_medium_2"
+                    android:text="@string/add_to_cart"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/text_regular_2x" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
